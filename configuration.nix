@@ -124,7 +124,7 @@
   users.users.luka = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
    ];
@@ -168,6 +168,7 @@
     inputs.agenix.packages."${system}".default
     kdePackages.polkit-kde-agent-1
     localsend
+    libguestfs
     dnsmasq
     sgdboop
   ];
