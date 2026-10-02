@@ -189,9 +189,10 @@
 
   # Enable the OpenSSH daemon.
   services.openssh = {
-    enable = false;
+    enable = true;
     generateHostKeys = true;
   };
+  systemd.services.sshd.wantedBy = lib.mkForce [];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

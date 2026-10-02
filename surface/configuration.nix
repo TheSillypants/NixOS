@@ -17,7 +17,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.zfs.forceImportRoot = false;
   boot.supportedFilesystems = [ "zfs" ];
-  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+  #boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+
+  hardware.microsoft-surface.kernelVersion = "longterm";
 
   networking.hostName = "LukaSurface"; # Define your hostname.
   networking.hostId = "8425e349";
