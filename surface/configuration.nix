@@ -10,19 +10,41 @@
       ./hardware-configuration.nix
       ./disk-config.nix
       ./agenix.nix
+      ./nh.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.zfs.forceImportRoot = false;
-  boot.supportedFilesystems = [ "zfs" ];
+  #boot.loader.systemd-boot.enable = true;
+  #boot.loader.efi.canTouchEfiVariables = true;
+  #boot.zfs.forceImportRoot = false;
+  #boot.supportedFilesystems = [ "zfs" ];
   #boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
-
-  hardware.microsoft-surface.kernelVersion = "longterm";
+  
+ boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      timeout = 0;
+    };
+    zfs.forceImportRoot = false;
+    supportedFilesystems = [ "zfs" ];
+    consoleLogLevel = 3;
+    initrd.verbose = false;
+    kernelParams = [
+      "quiet"
+      "rd.udev.log_level=3"
+      "rd.systemd.show_status=auto"
+    ];
+    plymouth = {
+      enable = true;
+    };
+ }; 
+ 
+ hardware.microsoft-surface.kernelVersion = "longterm";
 
   networking.hostName = "LukaSurface"; # Define your hostname.
   networking.hostId = "8425e349";
+
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
@@ -87,6 +109,8 @@
     wget
     git
     inputs.agenix.packages."${system}".default
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.touchup
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

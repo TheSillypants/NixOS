@@ -82,6 +82,8 @@
 	  home-manager.extraSpecialArgs = { inherit inputs; };
 	  home-manager.users.luka = ./surface/home.nix;
 	}
+	nix-index-database.nixosModules.default
+	{ programs.nix-index-database.comma.enable = true; }
       ];
     };
   };
