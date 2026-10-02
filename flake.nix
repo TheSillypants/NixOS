@@ -74,6 +74,7 @@
         ./surface/configuration.nix
 	disko.nixosModules.disko
 	agenix.nixosModules.default
+	nixos-hardware.nixosModules.microsoft-surface-pro-intel
 	home-manager.nixosModules.home-manager
 	{
 	  home-manager.useGlobalPkgs = true;
