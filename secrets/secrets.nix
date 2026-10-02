@@ -7,8 +7,8 @@ let
   users = [ luka ];
 
   hephaestus = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIeFv4ACdJdMt0o28gAAZvnSK576zAaojFxeS90QENdV";
-  sterope = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGsSg+blqiT6SELheuaYcOrmG73CLU3I6uN5LPZsXZyU";
-  systems = [ hephaestus sterope ];
+  steropes = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGsSg+blqiT6SELheuaYcOrmG73CLU3I6uN5LPZsXZyU";
+  systems = [ hephaestus steropes ];
 in
 {
   "secret1.age".publicKeys = users ++ systems ++ masterkey;

@@ -42,7 +42,7 @@
  
  hardware.microsoft-surface.kernelVersion = "longterm";
 
-  networking.hostName = "LukaSurface"; # Define your hostname.
+  networking.hostName = "Steropes"; # Define your hostname.
   networking.hostId = "8425e349";
 
 
