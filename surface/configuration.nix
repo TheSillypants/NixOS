@@ -94,6 +94,8 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # List services that you want to enable:
 
