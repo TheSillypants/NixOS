@@ -25,9 +25,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+<<<<<<< HEAD
     disko.url = "github:nix-community/disko/latest";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
+=======
+>>>>>>> 78ce62c29de6389d8eb6ec6c9d38bf20b5ebc81b
     nixvim = {
       url = "github:nix-community/nixvim";
     };
@@ -47,7 +50,11 @@
     };
 
   };
+<<<<<<< HEAD
   outputs = inputs@{self, nixpkgs, home-manager, nixos-hardware, nixvim, nix-index-database, agenix, disko, ...}: {
+=======
+  outputs = inputs@{self, nixpkgs, home-manager, nixos-hardware, nixvim, nix-index-database, agenix, ...}: {
+>>>>>>> 78ce62c29de6389d8eb6ec6c9d38bf20b5ebc81b
     nixosConfigurations.SillyNix = nixpkgs.lib.nixosSystem {
      system = "x86_64-linux";
      specialArgs = { inherit inputs; };
@@ -62,11 +69,16 @@
 	 home-manager.useUserPackages = true;
 	 home-manager.extraSpecialArgs = { inherit inputs; };
 	 home-manager.users.luka = ./home.nix;
+<<<<<<< HEAD
        } 
+=======
+       }
+>>>>>>> 78ce62c29de6389d8eb6ec6c9d38bf20b5ebc81b
        nix-index-database.nixosModules.default
        { programs.nix-index-database.comma.enable = true; }
      ];
     };
+<<<<<<< HEAD
     nixosConfigurations.SurfaceNix = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -83,5 +95,7 @@
 	}
       ];
     };
+=======
+>>>>>>> 78ce62c29de6389d8eb6ec6c9d38bf20b5ebc81b
   };
 }

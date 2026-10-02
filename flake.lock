@@ -45,6 +45,7 @@
         "type": "github"
       }
     },
+<<<<<<< HEAD
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -66,6 +67,8 @@
         "type": "github"
       }
     },
+=======
+>>>>>>> 78ce62c29de6389d8eb6ec6c9d38bf20b5ebc81b
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -310,7 +313,10 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+<<<<<<< HEAD
         "disko": "disko",
+=======
+>>>>>>> 78ce62c29de6389d8eb6ec6c9d38bf20b5ebc81b
         "home-manager": "home-manager_2",
         "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",
