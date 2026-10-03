@@ -5,11 +5,21 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager = {
+      url = "github:nix-community/home-manager";  
+    };
 
     nixos-hardware = {
       url = "github:Nixos/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    impermanence = {
+      url = "github:nix-community/impermanence";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+	home-manager.follows = "home-manager";
+      };
     };
 
     zen-browser = {
@@ -47,7 +57,7 @@
     };
 
   };
-  outputs = inputs@{self, nixpkgs, home-manager, nixos-hardware, nixvim, nix-index-database, agenix, disko, ...}: {
+  outputs = inputs@{self, nixpkgs, home-manager, nixos-hardware, nixvim, nix-index-database, impermanence, agenix, disko, ...}: {
     nixosConfigurations.SillyNix = nixpkgs.lib.nixosSystem {
      system = "x86_64-linux";
      specialArgs = { inherit inputs; };
@@ -75,6 +85,7 @@
 	disko.nixosModules.disko
 	agenix.nixosModules.default
 	nixos-hardware.nixosModules.microsoft-surface-pro-intel
+	impermanence.nixosModules.impermanence
 	home-manager.nixosModules.home-manager
 	{
 	  home-manager.useGlobalPkgs = true;
