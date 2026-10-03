@@ -20,4 +20,7 @@
     };
   };
 
+  home.packages = [
+    pkgs.bottles
+  ];
 }

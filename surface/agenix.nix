@@ -22,6 +22,10 @@
       group = "users";
       mode = "0600";
     };
+    steropes-luka_passwd = {
+      file = ../secrets/steropes-luka_passwd.age;
+      mode = "0600";
+    };
    
   };
 

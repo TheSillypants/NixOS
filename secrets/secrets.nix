@@ -14,6 +14,7 @@ in
   "secret1.age".publicKeys = users ++ systems ++ masterkey;
   "githubssh.age".publicKeys = users ++ systems ++ masterkey;
   "githubssh_pub.age".publicKeys = users ++ systems ++ masterkey;
+  "steropes-luka_passwd.age".publicKeys = users ++ systems ++ masterkey;
 
 
 }
