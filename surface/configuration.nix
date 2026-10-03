@@ -92,13 +92,22 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.luka = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
-  };
+  users = {
+    mutableUsers = false;
+    users = {
+      luka = {
+        isNormalUser = true;
+        extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+        packages = with pkgs; [
+          tree
+        ];
+        hashedPasswordFile = /run/agenix/steropes-luka_passwd;
+      };
+      root = {
+        hashedPassword = "!";
+      };
+    };
+   };
 
   programs.firefox.enable = true;
 
