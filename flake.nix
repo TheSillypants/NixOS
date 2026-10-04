@@ -81,7 +81,7 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        ./surface/configuration.nix
+        ./steropes/configuration.nix
 	disko.nixosModules.disko
 	agenix.nixosModules.default
 	nixos-hardware.nixosModules.microsoft-surface-pro-intel
