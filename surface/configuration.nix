@@ -101,7 +101,7 @@
         packages = with pkgs; [
           tree
         ];
-        hashedPasswordFile = /run/agenix/steropes-luka_passwd;
+        hashedPasswordFile = "/run/agenix/steropes-luka_passwd";
       };
       root = {
         hashedPassword = "!";
