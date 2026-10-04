@@ -110,7 +110,7 @@
         isNormalUser = true;
 	extraGroups = [];
 	hashedPassword = "!";
-	openssh.authorizedKeys.keyFiles = [ /run/agenix/steropes-deploykey_pub ]
+	openssh.authorizedKeys.keyFiles = [ /run/agenix/steropes-deploykey_pub ];
       };
     };
    };
