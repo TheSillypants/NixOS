@@ -26,6 +26,16 @@
       file = ../secrets/steropes-luka_passwd.age;
       mode = "0600";
     };
+
+    steropes-deploykey = {
+      file = ../secrets/steropes-deploykey.age;
+      mode = "0600";
+    };
+
+    steropes-deploykey_pub = {
+      file = ../secrets/steropes-deploykey_pub.age;
+      mode = "0600";
+    };
    
   };
 

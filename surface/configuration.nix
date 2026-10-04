@@ -106,6 +106,12 @@
       root = {
         hashedPassword = "!";
       };
+      deploy = {
+        isNormalUser = true;
+	extraGroups = [];
+	hashedPassword = "!";
+	openssh.authorizedKeys.keyFiles = "/run/agenix/steropes-deploykey_pub";
+      };
     };
    };
 
@@ -142,7 +148,32 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  systemd.services.sshd.wantedBy = lib.mkForce [];
+
+  services.openssh = {
+    enable = true;
+
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = false;
+    };
+
+  };
+
+  security.pam.sshAgentAuth.enable = true;
+  security.pam.services.sudo.sshAgentAuth = true;
+  security.sudo.extraRules = [
+    {
+      users = [ "deploy"];
+
+      commands = [
+        {
+	  command = "ALL";
+	}
+      ];
+    }
+  ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
