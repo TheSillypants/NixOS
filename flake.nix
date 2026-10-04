@@ -91,7 +91,7 @@
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
 	  home-manager.extraSpecialArgs = { inherit inputs; };
-	  home-manager.users.luka = ./surface/home.nix;
+	  home-manager.users.luka = ./steropes/home.nix;
 	}
 	nix-index-database.nixosModules.default
 	{ programs.nix-index-database.comma.enable = true; }
