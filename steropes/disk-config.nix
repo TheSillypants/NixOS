@@ -17,43 +17,30 @@
                 mountOptions = [ "umask=0077" ];
               };
             };
+            swap = {
+              size = "8G";
+	      content = {
+	        type = "swap";
+		randomEncryption = true;
+		priority = 100;
+		resumeDevice = false;
+	      };
+	    };
             luks = {
               size = "100%";
               content = {
                 type = "luks";
-                name = "NixOS";
+                name = "NixOS-LUKS";
                 extraOpenArgs = [ ];
 		passwordFile = "/tmp/secret.key";
                 settings = {
                   allowDiscards = true;
                 };
                 content = {
-                  type = "lvm_pv";
-                  vg = "NixVG";
+                  type = "zfs";
+                  pool = "NixOS";
                 };
               };
-            };
-          };
-        };
-      };
-    };
-    lvm_vg = {
-      NixVG = {
-        type = "lvm_vg";
-        lvs = {
-          zfs = {
-            size = "100%";
-            content = {
-              type = "zfs";
-	      pool = "NixOS";
-            };
-          };
-          swap = {
-            size = "8G";
-            content = {
-              type = "swap";
-              discardPolicy = "both";
-	      resumeDevice = false;
             };
           };
         };
@@ -73,6 +60,7 @@
           "root" = {
 	    type = "zfs_fs";
 	    mountpoint = "/";
+            postCreateHook = "zfs snapshot NixOS/root@blank";
 	  };
 	  "nix" = {
 	    type = "zfs_fs";
