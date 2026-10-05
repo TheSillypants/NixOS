@@ -11,6 +11,7 @@
       ./disk-config.nix
       ./agenix.nix
       ./nh.nix
+      ./impermanence.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -55,9 +56,11 @@
 	'';
       };
      };
- }; 
+  }; 
  
- hardware.microsoft-surface.kernelVersion = "longterm";
+  hardware.microsoft-surface.kernelVersion = "longterm";
+
+  fileSystems."/persist".neededForBoot = true;
 
   networking.hostName = "Steropes"; # Define your hostname.
   networking.hostId = "8425e349";
