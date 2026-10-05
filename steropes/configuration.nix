@@ -36,7 +36,7 @@
       "rd.systemd.show_status=auto"
     ];
     plymouth = {
-      enable = true;
+      enable = false;
     };
 
     initrd.systemd = {
