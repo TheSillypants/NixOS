@@ -38,6 +38,23 @@
     plymouth = {
       enable = true;
     };
+
+    initrd.systemd = {
+      services.zfs-rollback.enable = true;
+      services.zfs-rollback = {
+        #enable = true;
+        description = "Rollback ZFS root dataset to blank snapshot";
+	wantedBy = [ "initrd.target" ]; # set to lib.mkForce []; to disable
+	after = [ "zfs-import-NixOS.service" ];
+	before = [ "sysroot.mount" ];
+	path = with pkgs; [ zfs coreutils ];
+	unitConfig.DefaultDependencies = "no";
+	serviceConfig.Type = "oneshot";
+	script = ''
+	  zfs snapshot NixOS/root@reboot_$(date +"%m-%d-%Y_%T") && echo "root snapshot created"
+	'';
+      };
+     };
  }; 
  
  hardware.microsoft-surface.kernelVersion = "longterm";

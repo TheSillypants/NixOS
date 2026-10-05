@@ -36,7 +36,18 @@
       file = ../secrets/steropes-deploykey_pub.age;
       mode = "0600";
     };
-   
+
+    nmconnection-home = {
+      file = ../secrets/nmconnection-home.age;
+      mode = "0600";
+      path = /etc/NetworkManager/system-connections/home.nmconnection;
+    };
+
+    nmconnection-school = {
+      file = ../secrets/nmconnection-school.age;
+      mode = "0600";
+      path = /etc/NetworkManager/system-connections/home.nmconnection;
+    };
   };
 
 }

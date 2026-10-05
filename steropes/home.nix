@@ -27,5 +27,6 @@
 
   home.packages = [
     pkgs.bottles
+    pkgs.tldr
   ];
 }
