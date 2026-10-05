@@ -30,6 +30,11 @@
       };
     };
 
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,7 +62,7 @@
     };
 
   };
-  outputs = inputs@{self, nixpkgs, home-manager, nixos-hardware, nixvim, nix-index-database, impermanence, agenix, disko, ...}: {
+  outputs = inputs@{self, nixpkgs, home-manager, nixos-hardware, nixvim, nix-index-database, impermanence, firefox-addons, agenix, disko, ...}: {
     nixosConfigurations.SillyNix = nixpkgs.lib.nixosSystem {
      system = "x86_64-linux";
      specialArgs = { inherit inputs; };

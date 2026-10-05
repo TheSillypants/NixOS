@@ -8,6 +8,11 @@
 
   programs.home-manager.enable = true;
 
+  imports = [
+    inputs.zen-browser.homeModules.twilight
+    ../modules/hm-zen.nix
+  ];
+
   programs.ssh = {
     enable = true;
 
