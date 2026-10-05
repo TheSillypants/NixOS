@@ -122,6 +122,7 @@
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam"
     "steam-unwrapped"
+    "lsfg-vk"
   ];
 
   # List packages installed in system profile.
