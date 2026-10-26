@@ -11,6 +11,7 @@
       ./disk-config.nix
       ./agenix.nix
       ./nh.nix
+      ./waydroid.nix
       ./impermanence.nix
     ];
 
@@ -154,6 +155,7 @@
     inputs.agenix.packages."${system}".default
     gnomeExtensions.dash-to-dock
     gnomeExtensions.touchup
+    wl-clipboard
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
