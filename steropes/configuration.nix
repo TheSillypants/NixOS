@@ -122,7 +122,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  age.identityPaths = [ "/persist/etc/ssh/ssh_host_ed25519_key" ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
