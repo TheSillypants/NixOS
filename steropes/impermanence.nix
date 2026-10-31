@@ -2,7 +2,7 @@
 
 {
   environment.persistence."/persist" = {
-    hideMounts = true;
+    hideMounts = false;
     directories = [
       "/var/lib/nixos"
       "/var/lib/systemd"

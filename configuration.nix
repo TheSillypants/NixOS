@@ -171,6 +171,9 @@
     libguestfs
     dnsmasq
     sgdboop
+    fira
+    fira-sans
+    fira-code
   ];
 
   fonts.packages = with pkgs; [

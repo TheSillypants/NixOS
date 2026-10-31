@@ -123,6 +123,7 @@
     pkgs.haruna
     pkgs.signal-desktop
     pkgs.mangohud
+    pkgs.foliate
     pkgs.nicotine-plus
     pkgs.rpi-imager
     pkgs.processing
