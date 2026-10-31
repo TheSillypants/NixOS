@@ -2,7 +2,7 @@
 
 {
   environment.persistence."/persist" = {
-    enable = false;
+    enable = true;
     hideMounts = true;
     directories = [
       "/var/lib/nixos"

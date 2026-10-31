@@ -52,11 +52,11 @@
 	wantedBy = [ "initrd.target" ]; # set to lib.mkForce []; to disable
 	after = [ "zfs-import-NixOS.service" ];
 	before = [ "sysroot.mount" ];
-	path = with pkgs; [ zfs coreutils ];
+	path = with pkgs; [ zfs bash coreutils ];
 	unitConfig.DefaultDependencies = "no";
 	serviceConfig.Type = "oneshot";
 	script = ''
-	  zfs snapshot NixOS/root@reboot_$(date +"%m-%d-%Y_%T") && echo "root snapshot created"
+	  declare -x DYNTIME=$(date +"%m-%d-%Y_%T") && zfs rename NixOS/root NixOS/reboot_$DYNTIME && zfs set mountpoint=none NixOS/reboot_$DYNTIME && echo "root snapshot created" && zfs create -o mountpoint=/ NixOS/root && echo "blank root created"
 	'';
       };
      };
@@ -122,6 +122,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  age.identityPaths = [ "/persist/etc/ssh/ssh_host_ed25519_key" ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     mutableUsers = false;
@@ -135,7 +137,7 @@
         hashedPasswordFile = "/run/agenix/steropes-luka_passwd";
       };
       root = {
-        hashedPassword = "!";
+        hashedPassword = "$6$9KUB0LFlkGEqw3FO$JfdqcoK0l5C8E8iDf/Db2/b2hOMaostxLJ1FM3ygYoMK7usxjnrwP7LPrQ3FvQnjWfdy9zCVpIrF.vtlWlsup1";
       };
       deploy = {
         isNormalUser = true;
