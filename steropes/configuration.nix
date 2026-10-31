@@ -137,7 +137,7 @@
         hashedPasswordFile = "/run/agenix/steropes-luka_passwd";
       };
       root = {
-        hashedPassword = "$6$9KUB0LFlkGEqw3FO$JfdqcoK0l5C8E8iDf/Db2/b2hOMaostxLJ1FM3ygYoMK7usxjnrwP7LPrQ3FvQnjWfdy9zCVpIrF.vtlWlsup1";
+        hashedPassword = "!";
       };
       deploy = {
         isNormalUser = true;
