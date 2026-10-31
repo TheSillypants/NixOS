@@ -31,7 +31,7 @@
     zfs.forceImportRoot = false;
     supportedFilesystems = [ "zfs" ];
     consoleLogLevel = 3;
-    initrd.verbose = true;
+  ##  initrd.verbose = true;
     kernelParams = [
       "quiet"
       "rd.udev.log_level=3"
