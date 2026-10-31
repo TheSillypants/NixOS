@@ -37,6 +37,9 @@
       "rd.udev.log_level=3"
       "rd.systemd.show_status=auto"
     ];
+
+   
+
     plymouth = {
       enable = false;
     };
@@ -59,7 +62,14 @@
      };
   }; 
  
-  hardware.microsoft-surface.kernelVersion = "longterm";
+  hardware.microsoft-surface.kernelVersion = "stable";
+
+  boot.kernelPatches = [
+    {
+      name = "fix-rust-gen";
+      patch = ../patches/fix-rust-gen.patch;
+    }
+  ];
 
   fileSystems."/persist".neededForBoot = true;
 

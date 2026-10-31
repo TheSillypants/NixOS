@@ -62,7 +62,7 @@ in {
        packages = with firefox-addons; [
 	 ublock-origin
 	 bitwarden
-	 bypass-paywalls-clean
+	# bypass-paywalls-clean
        ];
      };
 

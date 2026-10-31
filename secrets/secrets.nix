@@ -7,7 +7,7 @@ let
   users = [ luka ];
 
   hephaestus = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIeFv4ACdJdMt0o28gAAZvnSK576zAaojFxeS90QENdV";
-  steropes = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGsSg+blqiT6SELheuaYcOrmG73CLU3I6uN5LPZsXZyU";
+  steropes = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIfiJSPiXIfQxrZ5hnAvRNJVglQkGPmlSrZce8U7ZmOE";
   systems = [ hephaestus steropes ];
 
   allkeys = users ++ systems ++ masterkey;
