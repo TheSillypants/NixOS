@@ -165,7 +165,7 @@
     wget
     #inputs.zen-browser.packages."${system}".twilight
     onlyoffice-desktopeditors
-    inputs.agenix.packages."${system}".default
+    inputs.agenix.packages."${stdenv.hostPlatform.system}".default
     kdePackages.polkit-kde-agent-1
     localsend
     libguestfs

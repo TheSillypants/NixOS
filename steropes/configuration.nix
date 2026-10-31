@@ -163,7 +163,7 @@
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installd by default.
     wget
     git
-    inputs.agenix.packages."${system}".default
+    inputs.agenix.packages."${stdenv.hostPlatform.system}".default
     gnomeExtensions.dash-to-dock
     gnomeExtensions.touchup
     wl-clipboard
