@@ -48,6 +48,12 @@
       mode = "0600";
       path = "/etc/NetworkManager/system-connections/school.nmconnection";
     };
+
+    nmconnection-church1 = {
+      file = ../secrets/nmconnection-church1.age;
+      mode = "0600";
+      path = "/etc/NetworkManager/system-connections/church1.nmconnection";
+   };
   };
 
 }

@@ -21,6 +21,7 @@ in
   "steropes-deploykey_pub.age".publicKeys = allkeys;
   "nmconnection-home.age".publicKeys = allkeys;
   "nmconnection-school.age".publicKeys = allkeys;
+  "nmconnection-church1.age".publicKeys = allkeys;
 
 
 }
