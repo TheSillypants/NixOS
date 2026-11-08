@@ -188,6 +188,9 @@
     inputs.agenix.packages."${stdenv.hostPlatform.system}".default
     gnomeExtensions.dash-to-dock
     gnomeExtensions.touchup
+    gnomeExtensions.gjs-osk
+    gnomeExtensions.one-window-wonderland
+    gnomeExtensions.auto-activities
     wl-clipboard
     localsend
     sbctl

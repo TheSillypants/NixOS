@@ -32,5 +32,6 @@
     pkgs.tldr
     pkgs.localsend
     pkgs.haruna
+    pkgs.xournalpp
   ];
 }
