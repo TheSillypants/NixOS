@@ -13,7 +13,6 @@
   imports = [
     inputs.zen-browser.homeModules.twilight
     inputs.nixvim.homeModules.nixvim
-    inputs.noctalia-v4.homeModules.default
     inputs.noctalia-v5.homeModules.default
   ];
   
@@ -97,9 +96,6 @@
     };
   };
 
-  programs.noctalia-shell = {
-    enable = true;
-  };
 
   programs.noctalia = {
     enable = true;
@@ -116,6 +112,7 @@
     pkgs.clementine
     pkgs.picard
     pkgs.eden
+    pkgs.koboldcpp
     pkgs.manix
     pkgs.tldr
     pkgs.heroic
