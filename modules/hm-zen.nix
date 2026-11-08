@@ -27,7 +27,7 @@ in {
 	};
 
 	Tracked = {
-	  color = "orange";
+	  color = "toolbar";
 	  icon = "fingerprint";
 	  id = 3;
 	};

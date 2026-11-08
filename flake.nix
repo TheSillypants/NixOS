@@ -61,8 +61,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.2.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
-  outputs = inputs@{self, nixpkgs, home-manager, nixos-hardware, nixvim, nix-index-database, impermanence, firefox-addons, agenix, disko, ...}: {
+  outputs = inputs@{self, nixpkgs, home-manager, lanzaboote, nixos-hardware, nixvim, nix-index-database, impermanence, firefox-addons, agenix, disko, ...}: {
     nixosConfigurations.SillyNix = nixpkgs.lib.nixosSystem {
      system = "x86_64-linux";
      specialArgs = { inherit inputs; };
@@ -92,6 +97,7 @@
 	nixos-hardware.nixosModules.microsoft-surface-pro-intel
 	impermanence.nixosModules.impermanence
 	home-manager.nixosModules.home-manager
+	lanzaboote.nixosModules.lanzaboote
 	{
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;

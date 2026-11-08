@@ -13,10 +13,16 @@
       "/var/lib/AccountsService"
       "/home"
       "/etc/ssh"
+      # lanzaboot
+      "/var/lib/sbctl"
+      "/var/lib/auto-cryptenroll"
+      "/var/lib/pcrlock.d"
     ];
 
     files = [
       "/etc/machine-id"
+      # lanzaboot
+      #"/var/lib/systemd/pcrlock.json"
     ];
   };
 }

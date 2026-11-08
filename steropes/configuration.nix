@@ -24,10 +24,32 @@
   
  boot = {
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot.enable = lib.mkForce false;
       efi.canTouchEfiVariables = true;
       timeout = 0;
     };
+
+    lanzaboote = {
+      enable = true;
+      configurationLimit = 4;
+      pkiBundle = "/var/lib/sbctl";
+      autoGenerateKeys.enable = true;
+      autoEnrollKeys = {
+        enable = true;
+	#includeFirmwareBuiltinKeys = true;
+      };
+      measuredBoot = {
+        enable = true;
+	pcrlockPolicy = "/persist/var/lib/systemd/pcrlock.json";
+	pcrs = [
+	  0
+	  4
+	  7
+        ];
+      };
+    };
+
+
     zfs.forceImportRoot = false;
     supportedFilesystems = [ "zfs" ];
     consoleLogLevel = 3;
@@ -160,14 +182,18 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installd by default.
+    neovim
     wget
     git
     inputs.agenix.packages."${stdenv.hostPlatform.system}".default
     gnomeExtensions.dash-to-dock
     gnomeExtensions.touchup
     wl-clipboard
+    localsend
+    sbctl
   ];
+
+  programs.localsend.openFirewall = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -11,24 +11,25 @@
   imports = [
     inputs.zen-browser.homeModules.twilight
     ../modules/hm-zen.nix
+    ../modules/hm-ssh.nix
   ];
 
-  programs.ssh = {
-    enable = true;
-
-    enableDefaultConfig = false;
-
-    settings."*" = {
-      "github.com" = {
-        hostName = "github.com";
-	user = "git";
-	identityFile = "/run/agenix/githubssh";
-      };
-    };
-  };
+ # programs.ssh = {
+ #   enable = true;
+ #
+ #   enableDefaultConfig = false;
+ #
+ #   settings."github.com" = {
+ #     hostName = "github.com";
+ #     user = "git";
+ #     identityFile = "/run/agenix/githubssh";
+ #   };
+ # };
 
   home.packages = [
     pkgs.bottles
     pkgs.tldr
+    pkgs.localsend
+    pkgs.haruna
   ];
 }
