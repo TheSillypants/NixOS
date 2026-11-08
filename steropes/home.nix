@@ -12,7 +12,8 @@
     inputs.zen-browser.homeModules.twilight
     ../modules/hm-zen.nix
     ../modules/hm-ssh.nix
-  ];
+    ../modules/hm-zsh.nix
+    ];
 
  # programs.ssh = {
  #   enable = true;
