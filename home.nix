@@ -122,11 +122,13 @@
     pkgs.mangohud
     pkgs.foliate
     pkgs.nicotine-plus
+    pkgs.sillytavern
     pkgs.rpi-imager
     pkgs.processing
     pkgs.aseprite
     pkgs.kdePackages.kamoso
     pkgs.kdePackages.filelight
+    pkgs.rsgain
   ];
 }
 
