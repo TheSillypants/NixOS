@@ -33,5 +33,6 @@
     pkgs.localsend
     pkgs.haruna
     pkgs.xournalpp
+    pkgs.signal-desktop
   ];
 }
